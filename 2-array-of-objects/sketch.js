@@ -1,5 +1,6 @@
 
 //create an empty array called balls
+
 let balls = [];
 
 function setup() {
@@ -13,7 +14,7 @@ function draw(){
 //	draw all the balls in that array
 	for (let i = 0; i < balls.length; i++) {
 	    balls[i].drawBall();
-        balls[i].moveBall();
+      balls[i].moveBall();
 	  }
 }
 
