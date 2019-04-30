@@ -4,6 +4,8 @@ let balls = [];
 //create a variable to hold your avatar
 let me;
 
+let mySound;
+
 function preload() {
   soundFormats('mp3', 'ogg');
   mySound = loadSound('boing1.mp3');
