@@ -19,7 +19,7 @@ function draw(){
   me.drawMe();
   me.moveMe();
 
-  if (frameCount % 25 == 0) {
+  if (frameCount % 15 == 0) {
       let  b = new Ball(width, random(0,height), -3);
       balls.push(b);
       console.log(balls); //print the balls array to the console
@@ -44,9 +44,9 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("red");
         strokeWeight(3);
-    		fill("blue");
+    		fill("black");
 		    ellipse(this.x,this.y,20,20);
         line(this.x,this.y, this.x, this.y+40);
         line(this.x, this.y+40, this.x-20, this.y+60);
@@ -54,6 +54,15 @@ class Avatar {
         line(this.x+10, this.y+50, this.x+5, this.y+60);
         line(this.x, this.y+15, this.x-10, this.y+25);
         line(this.x-10, this.y+25, this.x+10, this.y+35);
+        line(this.x+5, this.y+50,this.x+20,this.y-30);
+        line(this.x+20,this.y-30,this.x+70,this.y-20);
+        line(this.x+70,this.y-20,this.x+55,this.y+50);
+        line(this.x+55,this.y+50,this.x+10,this.y+40);
+        noFill();
+        ellipse(this.x+37.5,this.y+15,40,40);
+        line(this.x+20,this.y+32.5,this.x+42.5,this.y-10);
+        line(this.x+42.5,this.y-10,this.x+47.5,this.y+37.5);
+        line(this.x+20,this.y+10,this.x+55,this.y+17.5);
 	}
 
 	moveMe(){
@@ -63,6 +72,12 @@ class Avatar {
 
     if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
         this.y += this.speed;
+    }
+    if (keyIsDown(LEFT_ARROW)) {
+      this.x -= this.speed;
+    }
+    if (keyIsDown(RIGHT_ARROW)) {
+      this.x += this.speed;
     }
 	}
 
@@ -85,10 +100,10 @@ class Ball {
 
 	// draw a ball on the screen at x,y
 	drawBall(){
-    	stroke(0);
-      strokeWeight(1);
-    	fill("red");
-		  ellipse(this.x,this.y,10,10);
+    stroke(0);
+    strokeWeight(1);
+    fill("yellow");
+    ellipse(this.x,this.y,10,10);
 	}
 
 	//update the location of the ball, so it moves across the screen
@@ -99,7 +114,7 @@ class Ball {
 
 	//if the ball hits the person, change the speed value to negative (send it in the opposite direction)
   	bounceBall(){
-    		if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+40){
+    		if (this.x >= me.x-15 && this.x <= me.x+70 && this.y > me.y-40 && this.y < me.y+40){
       			this.speed = -this.speed;
     		}
   	}
