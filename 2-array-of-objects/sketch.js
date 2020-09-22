@@ -19,7 +19,7 @@ function draw(){
 }
 
 function keyPressed(){ //every time you push a key, make a new ball from the ball class and add it to the balls array
-  let  b = new Ball(random(0,800), random(0,400));
+  let  b = new Ball(100, 100);
   balls.push(b);
   console.log(balls);
 }
@@ -34,13 +34,13 @@ class Ball {
 
 	drawBall(){  // draw a ball on the screen at x,y
     		stroke(0);
-    		fill(random(0,270), random(0,270), random(0,270));
+    		fill("red");
 		    ellipse(this.x,this.y,10,10);
 	}
 
 	moveBall(){ //update the location of the ball, so it moves across the screen
-		this.x = this.x+random(-2,2);
-		this.y = this.y+random(-0.5,0.5);
+		this.x = this.x+2;
+		this.y = this.y+.5;
 	}
 
 
