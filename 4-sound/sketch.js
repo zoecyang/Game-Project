@@ -85,15 +85,15 @@ class Ball {
 	//every ball needs an x value, a y value, and a speed
 	constructor(x,y, speed){
 		this.x = x;
-    		this.y = y;
-        	this.speed = speed;
+		this.y = y;
+  	this.speed = speed;
 	}
 
 	// draw a ball on the screen at x,y
 	drawBall(){
-    		stroke(0);
-        	strokeWeight(1);
-    		fill("red");
+		stroke(0);
+  	strokeWeight(1);
+		fill("red");
 		ellipse(this.x,this.y,10,10);
 	}
 
