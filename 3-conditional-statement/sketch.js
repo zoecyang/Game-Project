@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw(){
-	background(220);
+	background(179, 220, 232);
 
   me.drawMe();
   me.moveMe();
@@ -44,7 +44,7 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("red");
         strokeWeight(3);
     		fill("blue");
 		    ellipse(this.x,this.y,20,20);
@@ -64,10 +64,18 @@ class Avatar {
     if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
         this.y += this.speed;
     }
+
+    if (keyIsDown(RIGHT_ARROW)){
+      this.x += this.speed;
+    }
+
+    if (keyIsDown(LEFT_ARROW)){
+      this.x -= this.speed;
+    }
 	}
 
   die(){
-
+// if the ball gets to the end of the screen, game over
   }
 
 }
@@ -87,7 +95,7 @@ class Ball {
 	drawBall(){
     	stroke(0);
       strokeWeight(1);
-    	fill("red");
+    	fill(50,150,60);
 		  ellipse(this.x,this.y,10,10);
 	}
 
@@ -99,7 +107,7 @@ class Ball {
 
 	//if the ball hits the person, change the speed value to negative (send it in the opposite direction)
   	bounceBall(){
-    		if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+40){
+    		if (this.x >= me.x-10 && this.x <= me.x+10 && this.y > me.y-40 && this.y < me.y+80){
       			this.speed = -this.speed;
     		}
   	}
