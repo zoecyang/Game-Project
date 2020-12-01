@@ -10,7 +10,7 @@ let plane//name of sound
 
 function preload() {
   soundFormats('mp3', 'ogg','wav');
-  mySound = loadSound('plane.wav');
+  mySound = loadSound('rollingthunder.wav');
 }
 
 function setup() {
@@ -124,3 +124,5 @@ class Ball {
             mySound.play();
     		}
   	}
+
+}
